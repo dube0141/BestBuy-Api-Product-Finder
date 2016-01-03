@@ -1,0 +1,44 @@
+<ion-view view-title="Find Store" ng-controller="StoreController">
+	<ion-content>
+		<div class="card" ng-show="mainStore != null">
+			<div class="item item-divider">
+				The closest store from your location is
+			</div>
+			<div class="item item-text-wrap" ng-model="mainStore">
+				<h3>{{mainStore.longName}}</h3>
+				<p><strong>Store ID:</strong> {{mainStore.storeId}}</p>
+				<p><strong>Address:</strong> {{mainStore.address}}</p>
+				<p><strong>Distance:</strong> {{mainStore.distance}} miles away</p>
+				<p><strong>Phone:</strong> {{mainStore.phone}}</p>
+				<p><strong>Hours:</strong> {{mainStore.hours}}</p>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="item item-divider">
+				Search for more stores
+			</div>
+			<div class="item item-text-wrap">
+				<div class="bar bar-header item-input-inset">
+					<label class="item-input-wrapper" ng-click="storeSearch = null">
+						<i class="icon ion-ios7-search placeholder-icon"></i>
+						<input type="search" placeholder="Search" ng-model="storeSearch">
+					</label>
+					<button class="button button-clear button-positive" type="button" ng-click="searchStore(storeSearch)">Search</button>
+				</div>
+			</div>
+			<ul class="list">
+				<div ng-repeat="store in storeList track by $index" ng-show="storeList.length > 0">
+					<li class="item">
+						<h3>{{store.longName}}</h3>
+						<p><strong>Store ID:</strong> {{store.storeId}}</p>
+						<p><strong>Address:</strong> {{store.address}}</p>
+						<p><strong>Distance:</strong> {{store.distance}} miles away</p>
+						<p><strong>Phone:</strong> {{store.phone}}</p>
+						<p><strong>Hours:</strong> {{store.hours}}</p>
+					</li>
+				</div>
+			</ul>
+		</div>
+	</ion-content>
+</ion-view>

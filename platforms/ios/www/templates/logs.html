@@ -1,0 +1,11 @@
+<ion-view view-title="Logs" ng-controller="LogController">
+	<ion-content>
+		<div class="list">
+			<div ng-repeat="log in logs track by $index">
+				<div class="item item-text-wrap">
+					<p>{{log}}</p>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,9 @@
+{
+  "name": "HelloIonic",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "~1.2.0",
+    "ngCordova": "~0.1.23-alpha",
+    "toastr": "~2.1.2"
+  }
+}

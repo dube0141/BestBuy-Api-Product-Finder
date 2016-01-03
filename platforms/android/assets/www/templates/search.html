@@ -1,0 +1,24 @@
+<ion-view view-title="Search Products" ng-controller="SearchController">
+	<ion-content>
+		<div class="bar bar-header item-input-inset">
+			<label class="item-input-wrapper" ng-click="searchInput = null">
+				<i class="icon ion-ios7-search placeholder-icon"></i>
+				<input type="search" placeholder="Search" ng-model="searchInput">
+			</label>
+			<button class="button button-clear button-positive" type="button" ng-click="search(searchInput)">Search</button>
+		</div>
+		<div ng-repeat="item in data track by $index">
+			<div class="list card">
+				<div class="item">
+					<h2>{{item.name}}</h2>
+					<p>{{item.salePrice | currency}}</p>
+				</div>
+
+				<div class="item item-body">
+					<img ng-src="{{item.image}}">
+					<p>SKU: {{item.sku}}</p>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
